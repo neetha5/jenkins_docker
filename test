@@ -1,0 +1,28 @@
+clone:
+//create a repo named mydocker
+git clone https://github.com/Naveen04jan/jenkins_docker.git
+ cd jenkins_docker
+ git remote -v
+git remote set-url origin https://github.com/Chinmayee-R12/my-docker.git
+ git push -u origin main
+
+
+docker build -t my-python-app10 .
+docker images
+//my-python-app10
+docker tag my-python-app10:latest ashwaja/my-python-app10:latest
+//Ashwaja/my-python-app10   
+docker images
+//ashwaja/my-python-app10
+docker login -u ashwaja
+//Login Succeeded
+docker push ashwaja/my-python-app10:latest
+
+
+
+
+one more terminal
+ rm jenkins.war
+sudo rm -rf ~/.Jenkins
+wget https://get.jenkins.io/war-stable/latest/jenkins.war
+java -jar jenkins.war --httpport=8080
